@@ -2,12 +2,11 @@ function me=drawmode(modevec,len,figname,vis,filename)
 me=1;
 try
     %     len=10;
-    h=5;figname='aa';vis='on';
     [r,c]=size(modevec);
     
     inix=[-len/2 len/2 len/2 -len/2 -len/2];
     iniy=[-len/2 -len/2 len/2 len/2 -len/2];
-    iniz=reshape(repmat([0:r],5,1),[1,(r+1)*5])*h;
+    iniz=
     mode5x=inix+modevec(1);
     mode4x=inix+modevec(2);
     mode3x=inix+modevec(3);
@@ -15,11 +14,8 @@ try
     mode1x=inix+modevec(5);
     
     figure('Color',[1 1 1],'Position',[10 10 480 800],'Name',figname,'Visible',vis)
-    line(repmat(inix,1,r+1),repmat(iniy,1,r+1),iniz,'Color',[0.5 0.5 0.5],'LineWidth',2,'LineStyle',':')
+    line(repmat(inix,1,r+1),repmat(iniy,1,r+1),reshape(repmat([0:r],5,1),[1,(r+1)*5]),'Color',[0.5 0.5 0.5],'LineWidth',2,'LineStyle',':')
     hold on
-    for kk=1:4
-        line([inix(kk) inix(kk)],[iniy(kk) iniy(kk)],[iniz(1) iniz(end)],'Color',[0.5 0.5 0.5],'LineWidth',2,'LineStyle',':');
-    end
     
     mode30x=inix+M30(2);
     mode30y=[iniy(1:2)+M30(1) iniy(3:4)+M30(3) iniy(5)+M30(1)];
