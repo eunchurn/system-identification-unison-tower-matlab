@@ -72,7 +72,7 @@ figure,loglog(F,Pxx(:,3:7))
 
 for ii=1:5
     [hz,frf(:,ii)]=exp_tf(detrend(ocwdata(:,2)),detrend(ocwdata(:,ii+2)),3,40960,dt); % transfer function
-    [tf(:,ii),hz2]=tfestimate(detrend(ocwdata(:,2)),detrend(ocwdata(:,ii+2)),WINDOW,NOVERLAP,NFFT,Fs);
+    [hz2,tf(:,ii)]=tfestimate(detrend(ocwdata(:,2)),detrend(ocwdata(:,ii+2)),WINDOW,NOVERLAP,NFFT,Fs);
 end
 
 figure,loglog(hz,abs(frf))
@@ -102,17 +102,7 @@ hLine2.LineStyle='none';
 hLine2.Marker='.';
 xlim(hAx(1),[0.3 7]);
 xlim(hAx(2),[0.3 7]);
-ylabel(hAx(1),'Experimental Transfer Function');
-ylabel(hAx(2),'Order');
-xlabel('Frequency (Hz)');
-
-figure
-[hAx,hLine1,hLine2]=plotyy(hz2,abs(tf),estVarBRfreq(:,1),estVarBRfreq(:,2),'semilogy','plot');
-hLine2.LineStyle='none';
-hLine2.Marker='.';
-xlim(hAx(1),[0.3 7]);
-xlim(hAx(2),[0.3 7]);
-ylabel(hAx(1),'Transfer Function Estimation');
+ylabel(hAx(1),'Experi');
 ylabel(hAx(2),'Order');
 xlabel('Frequency (Hz)');
 
