@@ -16,7 +16,7 @@
 
 function [hz,frf] = exp_tf(in_data,out_data,N,nt,dt) 
 
-global M T in Exp Ana sector dhz z output_num data nt 
+% global M T in Exp Ana sector dhz z output_num data nt 
 
  re = nt/2;   % averaging
  

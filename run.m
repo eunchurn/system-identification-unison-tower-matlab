@@ -87,8 +87,8 @@ figure
 [hAx,hLine1,hLine2]=plotyy(hz,abs(frf),estVarBRfreq(:,1),estVarBRfreq(:,2),'semilogy','plot');
 hLine2.LineStyle='none';
 hLine2.Marker='.';
-xlim(hAx(1),[F(1) 10]);
-xlim(hAx(2),[F(1) 10]);
+xlim(hAx(1),[0.3 7]);
+xlim(hAx(2),[0.3 7]);
 ylabel(hAx(1),'Power spectral density');
 ylabel(hAx(2),'Order');
 xlabel('Frequency (Hz)');
